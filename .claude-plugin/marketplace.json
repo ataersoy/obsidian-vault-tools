@@ -1,0 +1,13 @@
+{
+  "name": "obsidian-vault-tools",
+  "owner": {
+    "name": "ataersoy"
+  },
+  "plugins": [
+    {
+      "name": "obsidian-vault-tools",
+      "source": "./",
+      "description": "vault-reader + vault-writer subagents and the obsidian MCP server."
+    }
+  ]
+}
