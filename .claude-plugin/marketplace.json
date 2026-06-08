@@ -1,5 +1,6 @@
 {
   "name": "obsidian-vault-tools",
+  "description": "Obsidian vault read/write subagents backed by a local Obsidian REST API MCP server.",
   "owner": {
     "name": "ataersoy"
   },
