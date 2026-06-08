@@ -55,16 +55,16 @@ Plugins cannot ship a secret or a permission allowlist, so add both to your
   },
   "permissions": {
     "allow": [
-      "mcp__obsidian__obsidian_list_files_in_vault",
-      "mcp__obsidian__obsidian_list_files_in_dir",
-      "mcp__obsidian__obsidian_get_file_contents",
-      "mcp__obsidian__obsidian_batch_get_file_contents",
-      "mcp__obsidian__obsidian_simple_search",
-      "mcp__obsidian__obsidian_complex_search",
-      "mcp__obsidian__obsidian_get_periodic_note",
-      "mcp__obsidian__obsidian_get_recent_periodic_notes",
-      "mcp__obsidian__obsidian_append_content",
-      "mcp__obsidian__obsidian_patch_content"
+      "mcp__plugin_obsidian-vault-tools_obsidian__obsidian_list_files_in_vault",
+      "mcp__plugin_obsidian-vault-tools_obsidian__obsidian_list_files_in_dir",
+      "mcp__plugin_obsidian-vault-tools_obsidian__obsidian_get_file_contents",
+      "mcp__plugin_obsidian-vault-tools_obsidian__obsidian_batch_get_file_contents",
+      "mcp__plugin_obsidian-vault-tools_obsidian__obsidian_simple_search",
+      "mcp__plugin_obsidian-vault-tools_obsidian__obsidian_complex_search",
+      "mcp__plugin_obsidian-vault-tools_obsidian__obsidian_get_periodic_note",
+      "mcp__plugin_obsidian-vault-tools_obsidian__obsidian_get_recent_periodic_notes",
+      "mcp__plugin_obsidian-vault-tools_obsidian__obsidian_append_content",
+      "mcp__plugin_obsidian-vault-tools_obsidian__obsidian_patch_content"
     ]
   }
 }
@@ -85,3 +85,20 @@ Tell Claude which vault folder to work in (the scope) when delegating:
 
 If you don't name a folder, the reader searches the whole vault and the writer asks for the
 target rather than guessing.
+
+## Install / troubleshooting (private repo)
+
+- **Editing `settings.json` is not enough.** Registering the marketplace there does not install
+  the plugin — run `claude plugin install obsidian-vault-tools@obsidian-vault-tools` (or
+  `/plugin install …`), then restart.
+- **`claude plugin install` clones via SSH.** On a machine with no SSH key registered to GitHub
+  (HTTPS/`gh`-token auth only), the install fails with `git@github.com: Permission denied
+  (publickey)`. Fix once per machine by rewriting GitHub SSH URLs to HTTPS:
+  ```bash
+  git config --global url."https://github.com/".insteadOf "git@github.com:"
+  ```
+  (Affects only `git@github.com` URLs; uses your `gh` token. Or add an SSH key to GitHub instead.)
+- **Tool names are plugin-namespaced.** Because the `obsidian` MCP server ships inside this
+  plugin, its tools are exposed as `mcp__plugin_obsidian-vault-tools_obsidian__obsidian_*` (not
+  `mcp__obsidian__*`). The agent `tools:` lists and the allowlist above already use the namespaced
+  form — keep them in sync if you rename the plugin.
