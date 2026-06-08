@@ -6,7 +6,7 @@
   "plugins": [
     {
       "name": "obsidian-vault-tools",
-      "source": "./",
+      "source": { "source": "github", "repo": "ataersoy/obsidian-vault-tools" },
       "description": "vault-reader + vault-writer subagents and the obsidian MCP server."
     }
   ]
