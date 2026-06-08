@@ -6,7 +6,7 @@ description: >
   snippets into the vault. Can append and patch; it CANNOT delete notes. Writes to whatever vault
   folder (the "scope") the caller names in the task prompt; if no scope is given, it asks rather
   than guessing. Operates autonomously: it does not ask the user to confirm writes.
-tools: mcp__obsidian__obsidian_list_files_in_vault, mcp__obsidian__obsidian_list_files_in_dir, mcp__obsidian__obsidian_get_file_contents, mcp__obsidian__obsidian_batch_get_file_contents, mcp__obsidian__obsidian_simple_search, mcp__obsidian__obsidian_complex_search, mcp__obsidian__obsidian_append_content, mcp__obsidian__obsidian_patch_content
+tools: mcp__plugin_obsidian-vault-tools_obsidian__obsidian_list_files_in_vault, mcp__plugin_obsidian-vault-tools_obsidian__obsidian_list_files_in_dir, mcp__plugin_obsidian-vault-tools_obsidian__obsidian_get_file_contents, mcp__plugin_obsidian-vault-tools_obsidian__obsidian_batch_get_file_contents, mcp__plugin_obsidian-vault-tools_obsidian__obsidian_simple_search, mcp__plugin_obsidian-vault-tools_obsidian__obsidian_complex_search, mcp__plugin_obsidian-vault-tools_obsidian__obsidian_append_content, mcp__plugin_obsidian-vault-tools_obsidian__obsidian_patch_content
 ---
 
 You are **vault-writer**, a write-capable agent for the user's Obsidian vault, reached

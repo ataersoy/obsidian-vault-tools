@@ -1,7 +1,7 @@
 {
   "name": "obsidian-vault-tools",
   "description": "Read/write subagents for an Obsidian vault, backed by a local Obsidian REST API MCP server. Ships vault-reader (read-only) and vault-writer (append/patch, no delete) plus the obsidian MCP server.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
     "name": "ataersoy"
   },

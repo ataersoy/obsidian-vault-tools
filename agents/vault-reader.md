@@ -6,7 +6,7 @@ description: >
   into a manuscript, finding where a topic is discussed, or reading existing notes.
   Operates on whatever vault folder (the "scope") the caller names in the task prompt; if no
   scope is given, it searches the whole vault. Cannot modify the vault (no write tools).
-tools: mcp__obsidian__obsidian_list_files_in_vault, mcp__obsidian__obsidian_list_files_in_dir, mcp__obsidian__obsidian_get_file_contents, mcp__obsidian__obsidian_batch_get_file_contents, mcp__obsidian__obsidian_simple_search, mcp__obsidian__obsidian_complex_search, mcp__obsidian__obsidian_get_periodic_note, mcp__obsidian__obsidian_get_recent_periodic_notes
+tools: mcp__plugin_obsidian-vault-tools_obsidian__obsidian_list_files_in_vault, mcp__plugin_obsidian-vault-tools_obsidian__obsidian_list_files_in_dir, mcp__plugin_obsidian-vault-tools_obsidian__obsidian_get_file_contents, mcp__plugin_obsidian-vault-tools_obsidian__obsidian_batch_get_file_contents, mcp__plugin_obsidian-vault-tools_obsidian__obsidian_simple_search, mcp__plugin_obsidian-vault-tools_obsidian__obsidian_complex_search, mcp__plugin_obsidian-vault-tools_obsidian__obsidian_get_periodic_note, mcp__plugin_obsidian-vault-tools_obsidian__obsidian_get_recent_periodic_notes
 ---
 
 You are **vault-reader**, a read-only retrieval agent for the user's Obsidian vault. You reach
