@@ -86,18 +86,16 @@ Tell Claude which vault folder to work in (the scope) when delegating:
 If you don't name a folder, the reader searches the whole vault and the writer asks for the
 target rather than guessing.
 
-## Install / troubleshooting (private repo)
+## Install notes
 
 - **Editing `settings.json` is not enough.** Registering the marketplace there does not install
   the plugin — run `claude plugin install obsidian-vault-tools@obsidian-vault-tools` (or
   `/plugin install …`), then restart.
-- **`claude plugin install` clones via SSH.** On a machine with no SSH key registered to GitHub
-  (HTTPS/`gh`-token auth only), the install fails with `git@github.com: Permission denied
-  (publickey)`. Fix once per machine by rewriting GitHub SSH URLs to HTTPS:
+- **If `claude plugin install` fails to clone** with an SSH `git@github.com: Permission denied
+  (publickey)` error, point git at HTTPS for GitHub (one-time, per machine):
   ```bash
   git config --global url."https://github.com/".insteadOf "git@github.com:"
   ```
-  (Affects only `git@github.com` URLs; uses your `gh` token. Or add an SSH key to GitHub instead.)
 - **Tool names are plugin-namespaced.** Because the `obsidian` MCP server ships inside this
   plugin, its tools are exposed as `mcp__plugin_obsidian-vault-tools_obsidian__obsidian_*` (not
   `mcp__obsidian__*`). The agent `tools:` lists and the allowlist above already use the namespaced
